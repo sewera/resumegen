@@ -1,0 +1,150 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+\input{glyphtounicode}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\setlength{\footskip}{10pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{0.0mm}
+\addtolength{\evensidemargin}{0.0mm}
+\addtolength{\textwidth}{0.0mm}
+\addtolength{\topmargin}{3.0mm}
+\addtolength{\textheight}{0.0mm}
+
+\urlstyle{same}
+
+%\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0mm}
+
+\titleformat{\section}{
+  \it\vspace{3pt}
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item{
+    {#1 \vspace{-4pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE Your Name} \\ \vspace{0pt}
+  \begin{multicols}{2}
+    \begin{flushleft}
+      \href{{https://example.com/one}} \large{https://example.com/one} \\
+      \href{{https://example.com/two}} \large{https://example.com/two} \\
+    \end{flushleft}
+
+    \begin{flushright}
+      \href{{https://example.com/three}} \large{https://example.com/three} \\
+      \href{mailto:{john.doe@example.com}} \large{john.doe@example.com}
+    \end{flushright}
+  \end{multicols}
+\end{center}
+
+%------------ABOUT---------------
+\section{About}
+Lorem ipsum
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Position title}{Date 5 -- Date 6}
+{University, Company or Organization}{City, Country}
+\resumeItemListStart
+\small\resumeItem{very short description of one thing you did}
+\resumeItem{very short description of another thing you did}
+\resumeItem{very short description if there was another thing you did}
+\resumeItemListEnd
+
+\resumeSubheading
+{Another job title}{Date 7 -- Date 8}
+{University, Company or Organization}{City, Country}
+\resumeItemListStart
+\small\resumeItem{very short description of one thing you did}
+\resumeItem{very short description of another thing you did}
+\resumeItem{very short description if there was another thing you did}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{College Univeristy Name}{Date1 -- Date2}
+{degree and major you are pursuing}{City, Country}
+\resumeSubheading
+{Other School attended}{Date3 -- Date4}
+{degree and major or coursework you pursued}{City, Country}
+
+\resumeSubHeadingListEnd
+
+%-----------ADDITIONAL WORK-----------
+\section{Additional Work}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Title or brief description of the award}{}
+{University, Sponsor or Organization}{year(s)}
+\resumeSubheading
+{Title or brief description of the award}{}
+{University, Sponsor or Organization}{year(s)}
+\resumeSubheading
+{Title or brief description of the award}{}
+{University, Sponsor or Organization}{year(s)}
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0mm, label={}]
+  \normalsize{\item{
+                \textbf{Heading, eg. "Programming Languages"}{: Python (beginner), R (intermediate)} \\
+                \textbf{Other topics}{: your skills}\\
+                \textbf{Other topics}{: your skills} \\
+                \textbf{Other topics}{: your skills} \\
+          }}
+\end{itemize}
+
+\end{document}
