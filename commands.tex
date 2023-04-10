@@ -1,0 +1,38 @@
+\newcommand{\resumeItem}[1]{
+  \item{
+              {#1 \vspace{-4pt}}
+        }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+    \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+    \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+\newcommand{\resumetitle}[5]{
+  \begin{center}
+    {\LARGE #1} \\ \vspace{0pt}
+    \begin{multicols}{2}
+      \begin{flushleft}
+        \href{{#2}} \large{#2} \\
+        \href{{#3}} \large{#3} \\
+      \end{flushleft}
+
+      \begin{flushright}
+        \href{{#4}} \large{#4} \\
+        \href{mailto:{#5}} \large{#5}
+      \end{flushright}
+    \end{multicols}
+  \end{center}
+}
