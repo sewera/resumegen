@@ -1,25 +1,3 @@
-\newcommand{\resumeItem}[1]{
-  \item{
-              {#1 \vspace{-4pt}}
-        }
-}
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-  \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & #2 \\
-    \textit{\small #3} & \textit{\small #4} \\
-  \end{tabular*}\vspace{-7pt}
-}
-
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
-    \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-    \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
-
 \newcommand{\resumetitle}[5]{
   \begin{center}
     {\LARGE #1} \\ \vspace{0pt}
@@ -35,4 +13,39 @@
       \end{flushright}
     \end{multicols}
   \end{center}
+}
+
+\newcommand{\resumeStructuredListStart}{\begin{itemize}[leftmargin=0mm, label={}]}
+  
+\newcommand{\resumeStructuredItem}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeStructuredListEnd}{\end{itemize}}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}\small}
+  
+\newcommand{\resumeItem}[1]{
+  \item{
+    {#1 \vspace{-4pt}}
+  }
+}
+
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+\newcommand{\resumeSkillListStart}{\begin{itemize}[leftmargin=0mm, label={}]\small}
+
+\newcommand{\resumeSkillListEnd}{\end{itemize}}
+
+\newcommand{\legal}[1]{
+  \vspace*{\fill}
+  \textit{\small #1}
 }
