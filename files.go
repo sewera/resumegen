@@ -5,6 +5,9 @@ import "os"
 const ResumeTemplate = "resume.tex.gotpl"
 const DefaultInputYAML = "example.yaml"
 const GeneratedLatex = "generated.tex"
+const GeneratedDir = "gen/"
+const GeneratedPDF = GeneratedDir + "generated.pdf"
+const OutputDir = "dist/"
 
 func outputLatexFile() *os.File {
 	file, err := writableCleanFile(GeneratedLatex)

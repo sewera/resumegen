@@ -309,3 +309,4 @@ go.work
 # Project-specific
 generated.tex
 resumegen
+gen/
