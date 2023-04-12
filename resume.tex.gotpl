@@ -1,0 +1,100 @@
+\documentclass[a4paper,11pt]{article}
+
+\input{packages.tex}
+\input{initial-config.tex}
+\input{commands.tex}
+
+\begin{document}
+
+\resumetitle
+{((( .FullName -)))}
+((( range .Links -)))
+{((( .Href -)))}{(((- .Name )))}
+((( end )))
+
+%------------ABOUT---------------
+\section{About}
+((( .About )))
+
+%-----------EXPERIENCE-----------
+((( if .Experiences -)))
+\section{Experience}
+\resumeStructuredListStart
+(((- end -)))
+
+  (((- range .Experiences )))
+  \resumeStructuredItem
+  {((( .Position )))}{((( .Period.Start ))) -- ((( .Period.End )))}
+  {((( .Organization )))}{((( .Place )))}
+    (((- if .Descriptions )))
+    \resumeItemListStart
+    (((- end -)))
+      (((- range .Descriptions )))
+      \resumeItem{((( . )))}
+      (((- end )))
+    ((( if .Descriptions )))
+    \resumeItemListEnd
+    (((- end -)))
+  (((- end -)))
+
+(((- if .Experiences )))
+\resumeStructuredListEnd
+(((- end )))
+
+%-----------EDUCATION-----------
+((( if .Educations -)))
+\section{Education}
+\resumeStructuredListStart
+(((- end -)))
+
+  (((- range .Educations )))
+  \resumeStructuredItem
+  {((( .SchoolName )))}{((( .Period.Start ))) -- ((( .Period.End )))}
+  {((( .Degree )))}{((( .Place )))}
+  (((- end -)))
+
+(((- if .Educations )))
+\resumeStructuredListEnd
+(((- end )))
+
+%-----------ADDITIONAL WORK-----------
+((( if .AdditionalWorks -)))
+\section{Additional Work}
+\resumeStructuredListStart
+(((- end -)))
+
+  (((- range .AdditionalWorks )))
+  \resumeStructuredItem
+  {((( .Name )))}{}
+  {((( .Organization )))}{((( .Date )))}
+  (((- end -)))
+
+(((- if .AdditionalWorks )))
+\resumeStructuredListEnd
+(((- end )))
+
+%-----------SKILLS-----------
+((( if .SkillGroups -)))
+\section{Skills}
+\resumeSkillListStart
+(((- end -)))
+
+  (((- range .SkillGroups )))
+  \resumeItem{\textbf{((( .Category )))}{: ((( join .Skills ", " )))}}
+  (((- end -)))
+
+(((- if .SkillGroups )))
+\resumeSkillListEnd
+(((- end )))
+
+%--------LEGAL---------------
+
+\legal{
+  I hereby give consent
+  for my personal data to be processed by
+  ((( .CompanyName )))
+  for the purpose of conducting recruitment
+  for the position for which I am applying.
+}
+
+\end{document}

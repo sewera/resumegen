@@ -76,7 +76,6 @@ acs-*.bib
 # endnotes
 *.ent
 
-# fixme
 *.lox
 
 # feynmf/feynmp
@@ -135,7 +134,6 @@ acs-*.bib
 
 # knitr
 *-concordance.tex
-# TODO Comment the next line if you want to keep your tikz graphics files
 *.tikz
 *-tikzDictionary
 
@@ -216,7 +214,6 @@ pythontex-files-*/
 *.hst
 *.ver
 
-# easy-todo
 *.lod
 
 # xcolor
@@ -280,3 +277,34 @@ dist/
 
 # Mac OS
 .DS_Store
+
+## Go
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+# Go workspace file
+go.work
+
+# IDEA
+*.iml
+**/out/
+!src/**/out/
+
+# Based on https://jasonstitt.com/gitignore-whitelisting-patterns
+.idea/*
+!.idea/**/
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+
+# Project-specific
+generated.tex
