@@ -23,3 +23,6 @@ $(OUT_PDF): $(SRC_TEX)
 clean:
 	@rm -rf $(OUT_DIR)
 	@echo "> $(OUT_DIR) cleaned"
+
+build:
+	@go build -o resumegen github.com/sewera/resume-generator-latex

@@ -19,14 +19,7 @@ func writableCleanFile(name string) (*os.File, error) {
 }
 
 func inputYAMLFile(name string) *os.File {
-	var fileName string
-	if name == "" {
-		fileName = DefaultInputYAML
-	} else {
-		fileName = name
-	}
-
-	file, err := readableFile(fileName)
+	file, err := readableFile(name)
 	if err != nil {
 		panic(err)
 	}
