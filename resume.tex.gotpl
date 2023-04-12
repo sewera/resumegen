@@ -1,8 +1,8 @@
 \documentclass[a4paper,11pt]{article}
 
-\input{packages.tex}
-\input{initial-config.tex}
-\input{commands.tex}
+\input{tex/packages.tex}
+\input{tex/initial-config.tex}
+\input{tex/commands.tex}
 
 \begin{document}
 

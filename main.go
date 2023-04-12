@@ -20,5 +20,5 @@ func resumeTemplate() *template.Template {
 		New(ResumeTemplate).
 		Delims("(((", ")))").
 		Funcs(template.FuncMap{"join": strings.Join}).
-		ParseFiles(LatexDir + ResumeTemplate))
+		ParseFiles(ResumeTemplate))
 }

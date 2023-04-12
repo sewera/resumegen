@@ -2,10 +2,9 @@ package main
 
 import "os"
 
-const LatexDir = "tex/"
 const ResumeTemplate = "resume.tex.gotpl"
 const DefaultInputYAML = "example.yaml"
-const GeneratedLatex = LatexDir + "generated.tex"
+const GeneratedLatex = "generated.tex"
 
 func outputLatexFile() *os.File {
 	file, err := writableCleanFile(GeneratedLatex)
