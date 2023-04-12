@@ -3,7 +3,6 @@ package main
 import (
 	"gopkg.in/yaml.v3"
 	"io"
-	"os"
 )
 
 type Resume struct {
@@ -53,71 +52,6 @@ type SkillGroup struct {
 	Skills   []string `yaml:"skills"`
 }
 
-var Example = Resume{
-	FullName: "Full Name",
-	Links: [4]Link{
-		{
-			Name: "link 1",
-			Href: "link1",
-		},
-		{
-			Name: "link 2",
-			Href: "link2",
-		},
-		{
-			Name: "link 3",
-			Href: "link3",
-		},
-		{
-			Name: "link 4",
-			Href: "link4",
-		},
-	},
-	About: "Lorem ipsum",
-	Experiences: []Experience{
-		{
-			Position: "Position",
-			Period: Period{
-				Start: "Start",
-				End:   "End",
-			},
-			Organization: "Org",
-			Place:        "Place",
-			Descriptions: []string{
-				"Desc",
-			},
-		},
-	},
-	Educations: []Education{
-		{
-			SchoolName: "School",
-			Period: Period{
-				Start: "Start",
-				End:   "End",
-			},
-			Degree: "Degree",
-			Place:  "Place",
-		},
-	},
-	AdditionalWorks: []AdditionalWork{
-		{
-			Name:         "Additional Work",
-			Organization: "Org",
-			Date:         "Date",
-		},
-	},
-	SkillGroups: []SkillGroup{
-		{
-			Category: "Category",
-			Skills: []string{
-				"Skill 1",
-				"Skill 2",
-			},
-		},
-	},
-	CompanyName: "Company Name",
-}
-
 func FromYAML(r io.Reader) (parsed Resume) {
 	decoder := yaml.NewDecoder(r)
 	err := decoder.Decode(&parsed)
@@ -125,9 +59,4 @@ func FromYAML(r io.Reader) (parsed Resume) {
 		panic(err)
 	}
 	return
-}
-
-func ToYAML() {
-	e := yaml.NewEncoder(os.Stdout)
-	_ = e.Encode(Example)
 }
