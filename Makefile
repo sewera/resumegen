@@ -1,28 +1,26 @@
-SRC_TEX=generated.tex
+GEN_TEX=generated.tex
+OUT_BIN=resumegen
 OUT_DIR=./dist
 OUT_PDF=$(OUT_DIR)/generated.pdf
 
 LATEXMK_OPTIONS=-output-directory=$(OUT_DIR) -bibtex -pdf -pdflatex=pdflatex
 
-.PHONY: render clean
+.PHONY: clean
 
-render: $(OUT_PDF)
-
-$(SRC_TEX):
-	@go run github.com/sewera/resume-generator-latex
-
-$(OUT_PDF): $(SRC_TEX)
+$(OUT_PDF): $(GEN_TEX)
 	@latexmk \
 		$(LATEXMK_OPTIONS) \
 		-synctex=1 \
 		-f \
 		-interaction=nonstopmode \
-		$(SRC_TEX) > /dev/null
+		$(GEN_TEX) > /dev/null
 	@echo "> $@ rendered"
 
 clean:
 	@rm -rf $(OUT_DIR)
-	@echo "> $(OUT_DIR) cleaned"
+	@rm -f $(OUT_BIN)
+	@rm -f $(GEN_TEX)
+	@echo "> $(OUT_DIR), $(OUT_BIN), and $(GEN_TEX) cleaned"
 
 build:
-	@go build -o resumegen github.com/sewera/resume-generator-latex
+	@go build -o $(OUT_BIN) github.com/sewera/resume-generator-latex

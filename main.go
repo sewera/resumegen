@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"os"
+	"os/exec"
 	"strings"
 	"text/template"
 )
@@ -9,8 +11,30 @@ import (
 func main() {
 	yamlFile := inputYAMLFile(inputFileName())
 	resume := FromYAML(yamlFile)
-	err := resumeTemplate().Execute(outputLatexFile(), resume)
+	executeTemplate(resume)
+	generateResume()
+}
 
+func executeTemplate(resume Resume) {
+	err := resumeTemplate().Execute(outputLatexFile(), resume)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func generateResume() {
+	outputDir := "dist"
+	latexmkOptions := []string{
+		fmt.Sprintf("-output-directory=%s", outputDir),
+		"-bibtex",
+		"-pdf",
+		"-pdflatex=pdflatex",
+		"-f",
+		"-interaction=nonstopmode",
+		GeneratedLatex,
+	}
+	cmd := exec.Command("latexmk", latexmkOptions...)
+	err := cmd.Run()
 	if err != nil {
 		panic(err)
 	}
