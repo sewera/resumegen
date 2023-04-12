@@ -1,0 +1,38 @@
+---
+fullName: Your Name
+links:
+  - name: link 1
+    href: link1
+  - name: link 2
+    href: link2
+  - name: link 3
+    href: link3
+  - name: link 4
+    href: link4
+about: Lorem ipsum
+experience:
+  - position: Position
+    period:
+      start: Start
+      end: End
+    organization: Org
+    place: Place
+    descriptions:
+      - Desc
+education:
+  - schoolName: School
+    period:
+      start: Start
+      end: End
+    degree: Degree
+    place: Place
+additionalWorks:
+  - name: Additional Work
+    organization: Org
+    date: Date
+skillGroups:
+  - category: Category
+    skills:
+      - Skill 1
+      - Skill 2
+companyName: Company Name

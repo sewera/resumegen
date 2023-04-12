@@ -3,6 +3,7 @@ package main
 import (
 	"gopkg.in/yaml.v3"
 	"io"
+	"os"
 )
 
 type Resume struct {
@@ -124,4 +125,9 @@ func FromYAML(r io.Reader) (parsed Resume) {
 		panic(err)
 	}
 	return
+}
+
+func ToYAML() {
+	e := yaml.NewEncoder(os.Stdout)
+	_ = e.Encode(Example)
 }
