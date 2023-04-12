@@ -1,50 +1,55 @@
 package main
 
+import (
+	"gopkg.in/yaml.v3"
+	"io"
+)
+
 type Resume struct {
-	FullName        string
-	Links           [4]Link
-	About           string
-	Experiences     []Experience
-	Educations      []Education
-	AdditionalWorks []AdditionalWork
-	SkillGroups     []SkillGroup
-	CompanyName     string
+	FullName        string           `yaml:"fullName"`
+	Links           [4]Link          `yaml:"links"`
+	About           string           `yaml:"about"`
+	Experiences     []Experience     `yaml:"experience"`
+	Educations      []Education      `yaml:"education"`
+	AdditionalWorks []AdditionalWork `yaml:"additionalWorks"`
+	SkillGroups     []SkillGroup     `yaml:"skillGroups"`
+	CompanyName     string           `yaml:"companyName"`
 }
 
 type Link struct {
-	Name string
-	Href string
+	Name string `yaml:"name"`
+	Href string `yaml:"href"`
 }
 
 type Experience struct {
-	Position     string
-	Period       Period
-	Organization string
-	Place        string
-	Descriptions []string
+	Position     string   `yaml:"position"`
+	Period       Period   `yaml:"period"`
+	Organization string   `yaml:"organization"`
+	Place        string   `yaml:"place"`
+	Descriptions []string `yaml:"descriptions"`
 }
 
 type Period struct {
-	Start string
-	End   string
+	Start string `yaml:"start"`
+	End   string `yaml:"end"`
 }
 
 type Education struct {
-	SchoolName string
-	Period     Period
-	Degree     string
-	Place      string
+	SchoolName string `yaml:"schoolName"`
+	Period     Period `yaml:"period"`
+	Degree     string `yaml:"degree"`
+	Place      string `yaml:"place"`
 }
 
 type AdditionalWork struct {
-	Name         string
-	Organization string
-	Date         string
+	Name         string `yaml:"name"`
+	Organization string `yaml:"organization"`
+	Date         string `yaml:"date"`
 }
 
 type SkillGroup struct {
-	Category string
-	Skills   []string
+	Category string   `yaml:"category"`
+	Skills   []string `yaml:"skills"`
 }
 
 var Example = Resume{
@@ -110,4 +115,13 @@ var Example = Resume{
 		},
 	},
 	CompanyName: "Company Name",
+}
+
+func FromYAML(r io.Reader) (parsed Resume) {
+	decoder := yaml.NewDecoder(r)
+	err := decoder.Decode(&parsed)
+	if err != nil {
+		panic(err)
+	}
+	return
 }
