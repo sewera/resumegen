@@ -4,7 +4,11 @@
 \input{tex/initial-config.tex}
 \input{tex/commands.tex}
 
+\definecolor{rectcolor}{RGB}{((( .AccentColor.R ))),((( .AccentColor.G ))),((( .AccentColor.B )))}
+
 \begin{document}
+
+\AddToShipoutPictureBG{\AtPageUpperLeft{\color{rectcolor}\rule[-5mm]{\paperwidth}{5mm}}}
 
 \resumetitle
 {((( .FullName -)))}

@@ -14,6 +14,7 @@ type Resume struct {
 	AdditionalWorks []AdditionalWork `yaml:"additionalWorks"`
 	SkillGroups     []SkillGroup     `yaml:"skillGroups"`
 	CompanyName     string           `yaml:"companyName"`
+	AccentColor     RGB              `yaml:"accentColor,omitempty"`
 }
 
 type Link struct {
@@ -52,11 +53,28 @@ type SkillGroup struct {
 	Skills   []string `yaml:"skills"`
 }
 
-func FromYAML(r io.Reader) (parsed Resume) {
+type RGB struct {
+	R uint8 `yaml:"r"`
+	G uint8 `yaml:"g"`
+	B uint8 `yaml:"b"`
+}
+
+func FromYAML(r io.Reader) Resume {
 	decoder := yaml.NewDecoder(r)
+	var parsed Resume
 	err := decoder.Decode(&parsed)
 	if err != nil {
 		panic(err)
 	}
-	return
+	parsed = verifyColor(parsed)
+	return parsed
+}
+
+func verifyColor(resume Resume) Resume {
+	if resume.AccentColor.R == 0 &&
+		resume.AccentColor.G == 0 &&
+		resume.AccentColor.B == 0 {
+		resume.AccentColor = RGB{R: 255, G: 255, B: 255}
+	}
+	return resume
 }

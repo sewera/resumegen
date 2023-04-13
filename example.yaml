@@ -67,3 +67,7 @@ skillGroups:
       - Skill 3
       - Skill 4
 companyName: Company Name
+accentColor:
+  r: 64
+  g: 128
+  b: 255

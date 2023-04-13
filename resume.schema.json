@@ -47,8 +47,11 @@
         },
         "companyName": {
           "type": "string"
+        },
+        "accentColor": {
+          "$ref": "#/definitions/AccentColor"
         }
-          }
+      }
     },
     "AdditionalWork": {
       "type": "object",
@@ -181,6 +184,26 @@
         "skills"
       ],
       "title": "SkillGroup"
+    },
+    "AccentColor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "r": {
+          "$ref": "#/definitions/Color"
+        },
+        "g": {
+          "$ref": "#/definitions/Color"
+        },
+        "b": {
+          "$ref": "#/definitions/Color"
+        }
+      }
+    },
+    "Color": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 255
     }
   }
 }
