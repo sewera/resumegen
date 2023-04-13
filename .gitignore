@@ -300,7 +300,9 @@ go.work
 **/out/
 !src/**/out/
 
-.idea/
+# Based on https://jasonstitt.com/gitignore-whitelisting-patterns
+.idea/*
+!.idea/jsonSchemas.xml
 
 # Project-specific
 *.yaml

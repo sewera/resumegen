@@ -1,5 +1,8 @@
 {
   "[latex]": {
     "editor.formatOnSave": false
+  },
+  "yaml.schemas": {
+    "resume.schema.json": ["*.yaml", "*.yml"]
   }
 }
