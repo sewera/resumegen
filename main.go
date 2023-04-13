@@ -10,18 +10,12 @@ import (
 )
 
 func main() {
-	yamlFile := inputYAMLFile(inputFileName())
-	resume := FromYAML(yamlFile)
+	resume := FromYAML(os.Stdin)
 	executeTemplate(resume)
 	generateResume()
-	renameResume(outputFileName())
-}
-
-func inputFileName() string {
-	if len(os.Args) < 2 {
-		return DefaultInputYAML
+	if name, shouldRename := outputFileName(); shouldRename {
+		renameResume(name)
 	}
-	return os.Args[1]
 }
 
 func executeTemplate(resume Resume) {
@@ -57,23 +51,21 @@ func generateResume() {
 }
 
 func renameResume(target string) {
-	err := os.Mkdir(OutputDir, 0755)
+	dir := filepath.Dir(target)
+	err := os.Mkdir(dir, 0755)
 	if err != nil && !os.IsExist(err) {
 		panic(err)
 	}
 
-	err = os.Rename(GeneratedPDF, OutputDir+target)
+	err = os.Rename(GeneratedPDF, target)
 	if err != nil {
 		panic(err)
 	}
 }
 
-func outputFileName() string {
-	inputFile := inputFileName()
-	baseFileName := filepath.Base(inputFile)
-	outputFilename, ok := strings.CutSuffix(baseFileName, ".yaml")
-	if !ok {
-		outputFilename, _ = strings.CutSuffix(baseFileName, ".yml")
+func outputFileName() (string, bool) {
+	if len(os.Args) < 2 {
+		return "", false
 	}
-	return outputFilename + ".pdf"
+	return os.Args[1], true
 }
