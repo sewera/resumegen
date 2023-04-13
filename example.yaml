@@ -1,38 +1,69 @@
 ---
 fullName: Your Name
 links:
-  - name: link 1
-    href: link1
-  - name: link 2
-    href: link2
-  - name: link 3
-    href: link3
-  - name: link 4
-    href: link4
-about: Lorem ipsum
+  - name: example.com/1
+    href: https://example.com/1
+  - name: example.com/2
+    href: https://example.com/2
+  - name: example.com/3
+    href: https://example.com/3
+  - name: your.name@example.com
+    href: mailto:your.name@example.com
+about: |
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer
+  quis auctor elit sed. A iaculis at erat pellentesque adipiscing. Fringilla est
+  ullamcorper eget nulla facilisi. Eu lobortis elementum nibh tellus. Feugiat
+  nibh sed pulvinar proin gravida hendrerit lectus. Congue nisi vitae suscipit
+  tellus. Aenean et tortor at risus viverra adipiscing at in tellus. Sapien
+  pellentesque habitant morbi tristique senectus et netus et malesuada.
+  Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu.
 experience:
-  - position: Position
+  - position: Latest job position
     period:
-      start: Start
-      end: End
-    organization: Org
-    place: Place
+      start: "03.2020"
+      end: "present"
+    organization: Some Company
+    place: Some Place
     descriptions:
-      - Desc
-education:
-  - schoolName: School
+      - Performing task 1 that required skill 1
+      - Performing task 2 that required skill 2
+  - position: Previous job position
     period:
-      start: Start
-      end: End
-    degree: Degree
-    place: Place
+      start: "03.2019"
+      end: "02.2020"
+    organization: Some Other Company
+    place: Some Other Place
+    descriptions:
+      - Performing task 1 that required skill 1
+      - Performing task 2 that required skill 2
+education:
+  - schoolName: Some University
+    period:
+      start: "10.2016"
+      end: "06.2019"
+    degree: Some Degree
+    place: Some Place
+  - schoolName: Some School
+    period:
+      start: "09.2012"
+      end: "06.2016"
+    degree: Some Other Degree
+    place: Some Other Place
 additionalWorks:
-  - name: Additional Work
-    organization: Org
-    date: Date
+  - name: Extracurricular work
+    organization: Some Organization
+    date: "03.2020"
+  - name: Another Extracurricular work
+    organization: Some Other Organization
+    date: "12.2019"
 skillGroups:
-  - category: Category
+  - category: Hard skills
     skills:
       - Skill 1
       - Skill 2
+  - category: Soft skills
+    skills:
+      - Skill 3
+      - Skill 4
 companyName: Company Name
