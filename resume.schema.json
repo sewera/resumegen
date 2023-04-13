@@ -100,6 +100,7 @@
       "title": "Education"
     },
     "Period": {
+      "title": "Period",
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -113,11 +114,17 @@
       "required": [
         "end",
         "start"
-      ],
-      "title": "Period"
+      ]
     },
     "Experience": {
+      "title": "Experience",
       "type": "object",
+      "required": [
+        "organization",
+        "period",
+        "place",
+        "position"
+      ],
       "additionalProperties": false,
       "properties": {
         "position": {
@@ -138,15 +145,7 @@
             "type": "string"
           }
         }
-      },
-      "required": [
-        "descriptions",
-        "organization",
-        "period",
-        "place",
-        "position"
-      ],
-      "title": "Experience"
+      }
     },
     "Link": {
       "type": "object",
