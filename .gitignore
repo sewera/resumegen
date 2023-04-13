@@ -303,6 +303,8 @@ go.work
 .idea/
 
 # Project-specific
+*.yaml
+!example.yaml
 generated.tex
 resumegen
 gen/
