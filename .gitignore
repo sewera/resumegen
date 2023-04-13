@@ -300,7 +300,6 @@ go.work
 **/out/
 !src/**/out/
 
-# Based on https://jasonstitt.com/gitignore-whitelisting-patterns
 .idea/
 
 # Project-specific
