@@ -301,10 +301,7 @@ go.work
 !src/**/out/
 
 # Based on https://jasonstitt.com/gitignore-whitelisting-patterns
-.idea/*
-!.idea/**/
-!.idea/codeStyles/
-!.idea/inspectionProfiles/
+.idea/
 
 # Project-specific
 generated.tex

@@ -1,0 +1,186 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Resume",
+  "definitions": {
+    "Resume": {
+      "title": "Resume",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fullName": {
+          "type": "string"
+        },
+        "links": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "about": {
+          "type": "string"
+        },
+        "experience": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Experience"
+          }
+        },
+        "education": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Education"
+          }
+        },
+        "additionalWorks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AdditionalWork"
+          }
+        },
+        "skillGroups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SkillGroup"
+          }
+        },
+        "companyName": {
+          "type": "string"
+        }
+          }
+    },
+    "AdditionalWork": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "organization": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "name",
+        "organization"
+      ],
+      "title": "AdditionalWork"
+    },
+    "Education": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schoolName": {
+          "type": "string"
+        },
+        "period": {
+          "$ref": "#/definitions/Period"
+        },
+        "degree": {
+          "type": "string"
+        },
+        "place": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "degree",
+        "period",
+        "place",
+        "schoolName"
+      ],
+      "title": "Education"
+    },
+    "Period": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "end",
+        "start"
+      ],
+      "title": "Period"
+    },
+    "Experience": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "position": {
+          "type": "string"
+        },
+        "period": {
+          "$ref": "#/definitions/Period"
+        },
+        "organization": {
+          "type": "string"
+        },
+        "place": {
+          "type": "string"
+        },
+        "descriptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "descriptions",
+        "organization",
+        "period",
+        "place",
+        "position"
+      ],
+      "title": "Experience"
+    },
+    "Link": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "href",
+        "name"
+      ],
+      "title": "Link"
+    },
+    "SkillGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "category",
+        "skills"
+      ],
+      "title": "SkillGroup"
+    }
+  }
+}

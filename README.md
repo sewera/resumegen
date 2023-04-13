@@ -22,3 +22,16 @@ like:
 ```sh
 cat base.yaml company1.yaml backend.yaml | ./resumegen your_name_company1_backend.pdf
 ```
+
+## Schema validation
+
+No fields in `Resume` are required,
+because data can be spread through different YAML files.
+
+**For IntelliJ:**
+
+- Go to Settings
+- Search for JSON Schema Mappings
+- Select file `resume.schema.json`
+- Select version 6
+- Add resume yaml files to validate
