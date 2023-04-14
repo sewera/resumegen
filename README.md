@@ -1,11 +1,25 @@
 # Resume Generator LaTeX
 A tool for generating a classic style resume from metadata, templated in LaTeX.
 
+## Example
+
+An example YAML can be found in [example/example.yaml](./example/example.yaml).
+The command:
+
+```sh
+cat example/example.yaml | ./resumegen example/example.pdf
+```
+
+generates [example/example.pdf](./example/example.pdf),
+which looks like this:
+
+![Example Resume](./example/example.png)
+
 ## Prerequisites
 
-- Make
 - Go
-- LaTeX tools (latexmk)
+- Make
+- TeXLive (with latexmk)
 
 ## Run
 
@@ -27,11 +41,5 @@ cat base.yaml company1.yaml backend.yaml | ./resumegen your_name_company1_backen
 
 No fields in `Resume` are required,
 because data can be spread through different YAML files.
-
-**For IntelliJ:**
-
-- Go to Settings
-- Search for JSON Schema Mappings
-- Select file `resume.schema.json`
-- Select version 6
-- Add resume yaml files to validate
+Schema validation should work out of the box in IntelliJ.
+In VSCode, you have to install a recommended extension for YAML.
