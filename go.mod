@@ -1,4 +1,4 @@
-module github.com/sewera/resume-generator-latex
+module github.com/sewera/resumegen
 
 go 1.20
 

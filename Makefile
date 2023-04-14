@@ -5,7 +5,10 @@ OUT_PDF=$(GEN_DIR)/generated.pdf
 
 LATEXMK_OPTIONS=-output-directory=$(GEN_DIR) -bibtex -pdf -pdflatex=pdflatex
 
-.PHONY: render clean build
+.PHONY: build render clean
+
+build:
+	@go build -o $(OUT_BIN) github.com/sewera/resumegen
 
 render: $(OUT_PDF)
 
@@ -23,5 +26,3 @@ clean:
 	@rm -f $(GEN_TEX)
 	@echo "> $(GEN_DIR), $(OUT_BIN), and $(GEN_TEX) cleaned"
 
-build:
-	@go build -o $(OUT_BIN) github.com/sewera/resume-generator-latex
