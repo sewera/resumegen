@@ -30,7 +30,7 @@ func resumeTemplate() *template.Template {
 		New(ResumeTemplate).
 		Delims("(((", ")))").
 		Funcs(template.FuncMap{"join": strings.Join}).
-		ParseFiles(ResumeTemplate))
+		ParseFS(resumeTemplateFS, ResumeTemplate))
 }
 
 func generateResume() {

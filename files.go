@@ -1,11 +1,17 @@
 package main
 
-import "os"
+import (
+	"embed"
+	"os"
+)
 
 const ResumeTemplate = "resume.tex.gotpl"
 const GeneratedLatex = "generated.tex"
 const GeneratedDir = "gen/"
 const GeneratedPDF = GeneratedDir + "generated.pdf"
+
+//go:embed resume.tex.gotpl
+var resumeTemplateFS embed.FS
 
 func outputLatexFile() *os.File {
 	file, err := writableCleanFile(GeneratedLatex)

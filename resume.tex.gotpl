@@ -1,8 +1,99 @@
 \documentclass[a4paper,11pt]{article}
 
-\input{tex/packages.tex}
-\input{tex/initial-config.tex}
-\input{tex/commands.tex}
+% packages
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage[texcoord]{eso-pic}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+% config
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\setlength{\footskip}{10pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{0.0mm}
+\addtolength{\evensidemargin}{0.0mm}
+\addtolength{\textwidth}{0.0mm}
+\addtolength{\topmargin}{3.0mm}
+\addtolength{\textheight}{0.0mm}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0mm}
+
+\titleformat{\section}{
+  \it\vspace{3pt}
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+\pdfgentounicode=1
+
+% commands
+\newcommand{\resumetitle}[9]{
+  \begin{center}
+    {\LARGE #1} \\ \vspace{0pt}
+    \begin{multicols}{2}
+      \begin{flushleft}
+        \href{#2}{\large{#3}} \\
+        \href{#4}{\large{#5}} \\
+      \end{flushleft}
+
+      \begin{flushright}
+        \href{#6}{\large{#7}} \\
+        \href{#8}{\large{#9}}
+      \end{flushright}
+    \end{multicols}
+  \end{center}
+}
+
+\newcommand{\resumeStructuredListStart}{\begin{itemize}[leftmargin=0mm, label={}]}
+
+\newcommand{\resumeStructuredItem}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeStructuredListEnd}{\end{itemize}}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}\small}
+
+\newcommand{\resumeItem}[1]{
+  \item{
+    {#1 \vspace{-4pt}}
+  }
+}
+
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+\newcommand{\resumeSkillListStart}{\begin{itemize}[leftmargin=0mm, label={}]\small}
+
+\newcommand{\resumeSkillListEnd}{\end{itemize}}
+
+\newcommand{\legal}[1]{
+  \vspace*{\fill}
+  \textit{\small #1}
+}
 
 \definecolor{rectcolor}{RGB}{((( .AccentColor.R ))),((( .AccentColor.G ))),((( .AccentColor.B )))}
 
