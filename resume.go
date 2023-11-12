@@ -7,13 +7,14 @@ import (
 
 type Resume struct {
 	FullName        string           `yaml:"fullName"`
-	Links           [4]Link          `yaml:"links"`
+	Links           []Link           `yaml:"links"`
 	About           string           `yaml:"about"`
 	Experiences     []Experience     `yaml:"experience"`
 	Educations      []Education      `yaml:"education"`
 	AdditionalWorks []AdditionalWork `yaml:"additionalWorks"`
 	SkillGroups     []SkillGroup     `yaml:"skillGroups"`
 	CompanyName     string           `yaml:"companyName"`
+	Legal           string           `yaml:"legal"`
 	AccentColor     RGB              `yaml:"accentColor,omitempty"`
 }
 

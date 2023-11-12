@@ -92,7 +92,9 @@
 
 \newcommand{\legal}[1]{
   \vspace*{\fill}
-  \textit{\small #1}
+  {
+    \it\small #1
+  }
 }
 
 \definecolor{rectcolor}{RGB}{((( .AccentColor.R ))),((( .AccentColor.G ))),((( .AccentColor.B )))}
@@ -101,11 +103,25 @@
 
 \AddToShipoutPictureBG{\AtPageUpperLeft{\color{rectcolor}\rule[-5mm]{\paperwidth}{5mm}}}
 
-\resumetitle
-{((( .FullName -)))}
-((( range .Links -)))
-{((( .Href -)))}{(((- .Name )))}
-((( end )))
+
+\begin{center}
+{\LARGE ((( .FullName )))} \\ \vspace{0pt}
+\begin{multicols}{2}
+  (((- $split := splitLinks .Links -)))
+  (((- $left := index $split 0 -)))
+  (((- $right := index $split 1 )))
+  \begin{flushleft}
+    ((( range $left )))
+      \href{((( .Href )))}{\large{((( .Name )))}}
+    ((( end )))
+  \end{flushleft}
+  \begin{flushright}
+    ((( range $right )))
+      \href{((( .Href )))}{\large{((( .Name )))}}
+    ((( end )))
+  \end{flushright}
+\end{multicols}
+\end{center}
 
 %------------ABOUT---------------
 \section{About}
@@ -158,8 +174,8 @@
 \resumeStructuredListStart
 (((- end -)))
 
-  (((- range .AdditionalWorks )))
-  \resumeStructuredItem
+  (((- range .AdditionalWorks -)))
+    \resumeStructuredItem
   {((( .Name )))}{}
   {((( .Organization )))}{((( .Date )))}
   (((- end -)))
@@ -173,11 +189,9 @@
 \section{Skills}
 \resumeSkillListStart
 (((- end -)))
-
   (((- range .SkillGroups )))
-  \resumeItem{\textbf{((( .Category )))}{: ((( join .Skills ", " )))}}
+    \resumeItem{\textbf{((( .Category )))}{: ((( join .Skills ", " )))}}
   (((- end -)))
-
 (((- if .SkillGroups )))
 \resumeSkillListEnd
 (((- end )))
@@ -185,11 +199,15 @@
 %--------LEGAL---------------
 
 \legal{
-  I hereby give consent
-  for my personal data to be processed by
-  ((( .CompanyName )))
-  for the purpose of conducting recruitment
-  for the position for which I am applying.
+  ((( if .Legal )))
+    ((( .Legal )))
+  ((( else )))
+    I hereby give consent
+    for my personal data to be processed by
+    ((( .CompanyName )))
+    for the purpose of conducting recruitment
+    for the position for which I am applying.
+  ((( end )))
 }
 
 \end{document}

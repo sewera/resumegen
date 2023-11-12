@@ -12,8 +12,8 @@
         },
         "links": {
           "type": "array",
-          "minItems": 4,
-          "maxItems": 4,
+          "minItems": 2,
+          "maxItems": 8,
           "items": {
             "$ref": "#/definitions/Link"
           }
@@ -48,6 +48,9 @@
         "companyName": {
           "type": "string"
         },
+        "legal": {
+          "type": "string"
+        },
         "accentColor": {
           "$ref": "#/definitions/AccentColor"
         }
@@ -67,11 +70,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "date",
-        "name",
-        "organization"
-      ],
+      "required": ["date", "name", "organization"],
       "title": "AdditionalWork"
     },
     "Education": {
@@ -91,12 +90,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "degree",
-        "period",
-        "place",
-        "schoolName"
-      ],
+      "required": ["degree", "period", "place", "schoolName"],
       "title": "Education"
     },
     "Period": {
@@ -111,20 +105,12 @@
           "type": "string"
         }
       },
-      "required": [
-        "end",
-        "start"
-      ]
+      "required": ["end", "start"]
     },
     "Experience": {
       "title": "Experience",
       "type": "object",
-      "required": [
-        "organization",
-        "period",
-        "place",
-        "position"
-      ],
+      "required": ["organization", "period", "place", "position"],
       "additionalProperties": false,
       "properties": {
         "position": {
@@ -158,10 +144,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "href",
-        "name"
-      ],
+      "required": ["href", "name"],
       "title": "Link"
     },
     "SkillGroup": {
@@ -178,10 +161,7 @@
           }
         }
       },
-      "required": [
-        "category",
-        "skills"
-      ],
+      "required": ["category", "skills"],
       "title": "SkillGroup"
     },
     "AccentColor": {

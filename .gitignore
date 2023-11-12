@@ -310,3 +310,4 @@ go.work
 generated.tex
 resumegen
 gen/
+*.pdf

@@ -29,8 +29,20 @@ func resumeTemplate() *template.Template {
 	return template.Must(template.
 		New(ResumeTemplate).
 		Delims("(((", ")))").
-		Funcs(template.FuncMap{"join": strings.Join}).
+		Funcs(template.FuncMap{"join": strings.Join, "splitLinks": splitLinks}).
 		ParseFS(resumeTemplateFS, ResumeTemplate))
+}
+
+func splitLinks(links []Link) [2][]Link {
+	all := len(links)
+	if all < 2 {
+		return [2][]Link{links, {}}
+	}
+
+	rightLen := all / 2
+	leftLen := all - rightLen
+
+	return [2][]Link{links[0:leftLen], links[leftLen:]}
 }
 
 func generateResume() {
@@ -46,7 +58,7 @@ func generateResume() {
 	cmd := exec.Command("latexmk", latexmkOptions...)
 	err := cmd.Run()
 	if err != nil {
-		panic(err)
+		panic(fmt.Errorf("%w; check ./gen/generated.log file for more info", err))
 	}
 }
 
